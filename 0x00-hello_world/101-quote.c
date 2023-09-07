@@ -3,7 +3,6 @@
 
 /**
  * main - C program
- * 
  * Return: 1 (Passed)
  */
 int main(void)
