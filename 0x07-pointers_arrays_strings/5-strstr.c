@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-* _strstr - It will locate a function 
-* @haystack: It will point to a char
-* @needle: It points to a char
-* Return: Is 0
+* _strstr - locates a function
+* @haystack: It  points to a char
+* @needle: It  points to a char
+* Return:Is 0
 */
 
 char *_strstr(char *haystack, char *needle)
