@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _memcpy - memory
- * @dest: It point to char 
- * @src: points to a char value
- * @n: the size of the data
- * Return: It will return dest value
+ * _memcpy - irontnoux2
+ * @dest: It points to char params
+ * @src: It points to char params
+ * @n: size of byte
+ * Return:returns *dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
