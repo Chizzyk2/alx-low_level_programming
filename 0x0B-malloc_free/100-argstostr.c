@@ -1,8 +1,9 @@
+#include <stdlib.h>
 #include "main.h"
 /**
  * argstostr - arguments string
- * @ac: The width
- * @av: The height
+ * @ac: width
+ * @av: height
  * Return: string
  */
 
