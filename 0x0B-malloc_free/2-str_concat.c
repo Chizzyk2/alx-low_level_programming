@@ -20,10 +20,10 @@ int _strlen(char *s)
 }
 
 /**
-* str_concat - Concat 2 strings.
-* @s1: string
-* @s2: string
-* Return: char
+* str_concat - strings concatenation
+* @s1: first string
+* @s2: second string
+* Return: character
 */
 
 char *str_concat(char *s1, char *s2)
