@@ -1,55 +1,49 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strlen - String
- * @s: character
- * Return: string
+ * str_concat - strings concatenation
+ * @s1: first string input
+ * @s2: second string input
+ * Return: strings or NULL
  */
-
-int _strlen(char *s)
-{
-	int l = 0;
-
-	while (*s != '\0')
-	{
-		s++;
-		l++;
-	}
-	return (l);
-}
-
-/**
-* str_concat - Concatenate the 2 strings.
-* @s1: string
-* @s2: string
-* Return: character
-*/
-
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int l1, l2;
-	char *conc, *tmp;
+	char *new_str, *starts1, *starts2;
+	int i = 0, lens1 = 0, lens2 = 0;
 
-	if (!s1)
+	starts1 = s1;
+	starts2 = s2;
+	if (s1 == NULL)
 		s1 = "";
-	else
-		l1 = _strlen(s1);
-
-	if (!s2)
-		s2 = "";
-	else
-		l2 = _strlen(s2);
-
-	conc = malloc(l1 + l2 + 1);
-	if (!conc)
-		return (0);
-
-	tmp = conc;
 	while (*s1)
-		*tmp++ = *s1++;
+	{
+		lens1++;
+		s1++;
+	}
+	s1 = starts1;
+	if (s2 == NULL)
+		s2 = "";
+	while (*s2)
+	{
+		lens2++;
+		s2++;
+	}
+	s2 = starts2;
+	new_str = malloc(sizeof(char) * (lens1 + lens2 + 1));
+	starts1 = new_str;
+	if (new_str == NULL)
+		return (NULL);
+	for (; i < (lens1 + lens2); i++)
+	{
+		if (i < lens1)
+		{
+			new_str[i] = *s1;
+			s1++;
+		}
+		else
+		{
+			new_str[i] = *s2;
+			s2++;
+		}
 
-	while ((*tmp++ = *s2++))
-		;
-
-	return (conc);
-}
