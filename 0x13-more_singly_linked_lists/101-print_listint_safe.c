@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - linked list safely printed
+ * print_listint_safe - linked list printed
  * @head: points
- * Return: nodes
+ * Return: node
  */
 size_t print_listint_safe(const listint_t *head)
 {
