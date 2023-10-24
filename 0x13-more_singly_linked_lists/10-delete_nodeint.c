@@ -2,35 +2,35 @@
 #include <stdlib.h>
 
 /**
- * delete_nodeint_at_index - Deletes a node
- * @head: points
+ * delete_nodeint_at_index - node is deleted
+ * @head: pointer
  * @index: index
- * Return: 1 if correct, -1
+ * Return: 1 succeded, otherwise
  **/
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int j;
-	listint_t *first, *second;
+	unsigned int i;
+	listint_t *current, *next;
 
 	if (head == NULL || *head == NULL)
 		return (-1);
 	if (index == 0)
 	{
-		second = (*head)->second;
+		next = (*head)->next;
 		free(*head);
-		*head = second;
+		*head = next;
 		return (1);
 	}
-	first = *head;
-	for (j = 0; j < index - 1; j++)
+	current = *head;
+	for (i = 0; i < index - 1; i++)
 	{
-		if (first->second == NULL)
+		if (current->next == NULL)
 			return (-1);
-		first = first->second;
+		current = current->next;
 	}
-	next = first->second;
-	first->second = second->second;
-	free(second);
+	next = current->next;
+	current->next = next->next;
+	free(next);
 	return (1);
 }
