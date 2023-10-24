@@ -2,22 +2,22 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - Deletes node
+ * pop_listint - Delete list
  * @head: Points
- * Return: Node
+ * Return: Int
  **/
 
 int pop_listint(listint_t **head)
 {
-	listint_t *tep;
+	listint_t *tp;
 	int my_data;
 
 	if (*head == NULL)
 		return (0);
 
-	tep = *head;
-	*head = tep->next;
-	my_data = tep->n;
-	free(tep);
-	return (val);
+	tp = *head;
+	*head = tp->next;
+	my_data = tp->n;
+	free(tp);
+	return (my_data);
 }
