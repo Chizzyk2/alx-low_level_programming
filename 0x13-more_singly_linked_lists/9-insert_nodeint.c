@@ -4,37 +4,37 @@
 /**
  * insert_nodeint_at_index - new node is inserted
  * @head: points
- * @idx: insert
- * @n: int
+ * @idx: index
+ * @n: new node
  * Return: node
  **/
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *node_call, *tmp;
-	unsigned int j = 0;
+	listint_t *new_node, *temp;
+	unsigned int i = 0;
 
 	if (*head == NULL && idx != 0)
 		return (NULL);
 	if (idx != 0)
 	{
-	tep = *head;
-	for (; j < idx - 1 && tep != NULL; j++)
-		tep = tep->next;
-	if (tep == NULL)
+	temp = *head;
+	for (; i < idx - 1 && temp != NULL; i++)
+		temp = temp->next;
+	if (temp == NULL)
 		return (NULL);
 	}
-	node_call = malloc(sizeof(listint_t));
-	if (node_call == NULL)
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
 		return (NULL);
-	node_call->n = n;
+	new_node->n = n;
 	if (idx == 0)
 	{
-		node_call->next = *head;
-		*head = node_call;
-		return (node_call);
+		new_node->next = *head;
+		*head = new_node;
+		return (new_node);
 	}
-	node_call->next = tep->next;
-	tep->next = node_call;
-	return (node_call);
+	new_node->next = temp->next;
+	temp->next = new_node;
+	return (new_node);
 }
