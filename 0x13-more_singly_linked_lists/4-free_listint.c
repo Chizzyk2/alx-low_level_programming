@@ -1,19 +1,20 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * free_listint - free list
- * @head: points
- * Return: Null
- */
+ * free_listint - list
+ * @head: pointer
+ **/
+
 void free_listint(listint_t *head)
 {
-	listint_t *tep;
+	listint_t *tp, *tp2;
 
-	while (head)
+	tp = head;
+	while (tp != NULL)
 	{
-		tep = head;
-		head = head->next;
-		free(tep);
+		tp2 = tp->next;
+		free(tp);
+		tp = tp2;
 	}
-	free(head);
 }
