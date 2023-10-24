@@ -1,15 +1,16 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * free_listint_safe - linked list is free
+ * free_listint_safe - frees list
  * @h: points
- * Return: node
+ *
+ * Return: freed list
  */
 size_t free_listint_safe(listint_t **h)
 {
 	size_t len = 0;
 	int diff;
-	listint_t *tep;
+	listint_t *temp;
 
 	if (!h || !*h)
 		return (0);
@@ -19,8 +20,8 @@ size_t free_listint_safe(listint_t **h)
 		diff = *h - (*h)->next;
 		if (diff > 0)
 		{
-			tep = (*h)->next;
-			*h = tep;
+			temp = (*h)->next;
+			*h = temp;
 			len++;
 		}
 		else
